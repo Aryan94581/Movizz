@@ -1,8 +1,21 @@
+@import "../../mixins.scss";
 .switchingTabs {
     height: 34px;
     background-color: white;
     border-radius: 20px;
     padding: 2px;
+    width:12.8rem;
+    margin-left: 60rem;
+    margin-top:-2rem;
+   @include esm {
+    margin-left:8rem;
+   }
+   @include md {
+    margin-left:35rem;
+   }
+   @include lg {
+    margin-left: 60rem;
+   }
     .tabItems {
         display: flex;
         align-items: center;

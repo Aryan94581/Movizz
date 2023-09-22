@@ -1,6 +1,7 @@
 import React from 'react'
 import ContentWrapper from '../../../components/contentWrapper/contentWrapper';
 import SwitchTabs from '../../../components/switchTabs/SwitchTabs';
+SwitchTabs  
 
 ContentWrapper
 
@@ -16,7 +17,7 @@ const Trending = () => {
             <span className="carouselTitle">
                 Trending
             </span>
-            <SwitchTabs data={["Day", "Week"]} onTabChange={onTabChange} />
+            <SwitchTabs data = {["Day","Week"]}  onTabChange={onTabChange}/>
         </ContentWrapper>
     </div>
 }
