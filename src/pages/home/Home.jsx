@@ -8,7 +8,7 @@ const home = () => {
   return <div className="homePage">
       <HeroBanner/>
       <Trending/>
-      <div style={{height:1000}}>
+      <div style={{height:500}}>
 
       </div>
     </div>
