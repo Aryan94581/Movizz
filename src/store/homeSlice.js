@@ -2,22 +2,22 @@ import { createSlice } from '@reduxjs/toolkit'
 
 export const homeSlice = createSlice({
   name: 'home',
-  initialState:{
-    url:{},
-    geners:{},
+  initialState: {
+    url: {},
+    geners: {},
 
   },
   reducers: {
-  getApiConfiguration:(state,action)=>{
-state.url=action.payload;
-  },
-  getGeners:(state,action)=>{
-state.geners=action.payload;
-  }
+    getApiConfiguration: (state, action) => {
+      state.url = action.payload;
+    },
+    getGeners: (state, action) => {
+      state.geners = action.payload;
+    }
   },
 })
 
 
-export const { getApiConfiguration, getGeners} = homeSlice.actions
+export const { getApiConfiguration, getGeners } = homeSlice.actions
 
 export default homeSlice.reducer
