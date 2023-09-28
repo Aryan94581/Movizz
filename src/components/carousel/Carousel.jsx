@@ -13,6 +13,7 @@ import Img from "../lazyLoadImage/img";
 import PosterFallback from "../../assets/no-poster.png";
 import "./Carousel.scss";
 import CircleRating from "../circleRating/CircleRating";
+// import Genres from "../genres/Genres";
 
 const Carousel = ({ data, loading }) => {
 
@@ -52,23 +53,28 @@ const Carousel = ({ data, loading }) => {
                     {data?.map((item) => {
 
                         const posterUrl = item.poster_path ? url.poster + item.poster_path : PosterFallback;
-
+                        console.log("item:"+ item);
+                        console.log("item_name:"+item.title);
                         return (
                             <div className="carouselItem" key={item.id}>
                                 <div className="posterBlock">
                                     <Img src={posterUrl} />
                                     <CircleRating rating={item.vote_average} />
+                                    {/* <Genres data={
+                                        item.genres_ids
+                                    }/> */}
                                 </div>
                                 <div className="textBlock">
                                     <span className="title">
                                         {
                                             item.title || item.name
+                                            
                                         }
                                     </span>
                                     <span className="date">
                                         {
                                             dayjs(item.release_date).format(
-                                                "DD MM YYYY"
+                                                "DD MM YYYY"    
                                             )
                                         }
                                     </span>
