@@ -12,9 +12,9 @@ import Img from "../lazyLoadImage/img";
 import PosterFallback from "../../assets/no-poster.png";
 import "./Carousel.scss";
 import CircleRating from "../circleRating/CircleRating";
-// import Genres from "../genres/Genres";
+import Genres from "../genres/Genres";
 
-const Carousel = ({ data, loading, endpoint}) => {
+const Carousel = ({ data, loading, endpoint }) => {
   const carouselContainer = useRef();
   const { url } = useSelector((state) => state.home);
   const navigate = useNavigate();
@@ -66,14 +66,14 @@ const Carousel = ({ data, loading, endpoint}) => {
                 <div
                   className="carouselItem"
                   key={item.id}
-                  onClick={() => navigate(`${item.media_type || endpoint}/${item.id}`)}
+                  onClick={() =>
+                    navigate(`${item.media_type || endpoint}/${item.id}`)
+                  }
                 >
                   <div className="posterBlock">
                     <Img src={posterUrl} />
                     <CircleRating rating={item.vote_average} />
-                    {/* <Genres data={
-                                        item.genres_ids
-                                    }/> */}
+                    <Genres data={item.genres_ids} />
                   </div>
                   <div className="textBlock">
                     <span className="title">{item.title || item.name}</span>
