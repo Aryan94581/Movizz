@@ -3,6 +3,8 @@ import "./details.scss";
 import useFetch from '../../components/hooks/useFetch';
 import { useParams } from 'react-router-dom';
 import DetailsBanner from './detailsBanner/DetailsBanner';
+import Cast from './cast/Cast';
+import { createAction } from '@reduxjs/toolkit';
 
 const details = () => {
   const {mediaType,id} = useParams();
@@ -11,6 +13,7 @@ const details = () => {
   return (
     <div>
       <DetailsBanner video={data?.results[0]} crew={credits?.crew}/>
+      <Cast data={credits?.cast} loading={creditsLoading}/>
     </div>
   )
 }
