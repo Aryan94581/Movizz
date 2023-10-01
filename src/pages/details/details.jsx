@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 import DetailsBanner from './detailsBanner/DetailsBanner';
 import Cast from './cast/Cast';
 import { createAction } from '@reduxjs/toolkit';
+import VideosSection from './videoSection/VideoSection';
 
 const details = () => {
   const {mediaType,id} = useParams();
@@ -14,6 +15,7 @@ const details = () => {
     <div>
       <DetailsBanner video={data?.results[0]} crew={credits?.crew}/>
       <Cast data={credits?.cast} loading={creditsLoading}/>
+      <VideosSection data={data} loading={loading}/>
     </div>
   )
 }
