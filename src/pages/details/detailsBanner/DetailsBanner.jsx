@@ -64,6 +64,7 @@ const DetailsBanner = ({ video, crew }) => {
                     </div>
                     <div className="subtitle">{data.tagline}</div>
                     <div className="margin_between_overview_and_title">
+                      <div className="margin-between">
                       <div className="row">
                         <CircleRating rating={data.vote_average.toFixed(1)} />
                       </div>
@@ -74,6 +75,7 @@ const DetailsBanner = ({ video, crew }) => {
                       }}>
                         <PlayIcon />
                         <span className="text">Watch Trailer</span>
+                      </div>
                       </div>
                     </div>
                     <div className="overview">
