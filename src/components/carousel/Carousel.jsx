@@ -1,13 +1,15 @@
-import React, { useRef } from "react";
+/* eslint-disable react/prop-types */
+import { useRef } from "react";
 import {
   BsFillArrowLeftCircleFill,
   BsFillArrowRightCircleFill,
 } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+// eslint-disable-next-line no-unused-vars
 import dayjs, { Dayjs } from "dayjs";
 
-import ContentWrapper from "../contentWrapper/ContentWrapper";
+import ContentWrapper from '../contentWrapper/contentWrapper';
 import Img from "../lazyLoadImage/img";
 import PosterFallback from "../../assets/no-poster.png";
 import "./Carousel.scss";

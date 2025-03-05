@@ -1,16 +1,16 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import dayjs from "dayjs";
 
 import "./DetailsBanner.scss";
 
-import ContentWrapper from "../../../components/contentWrapper/ContentWrapper";
+import ContentWrapper from "../../../components/contentWrapper/contentWrapper";
 import useFetch from "../../../components/hooks/useFetch";
 import CircleRating from "../../../components/circleRating/CircleRating";
 import Img from "../../../components/lazyLoadImage/img";
 import PosterFallback from "../../../assets/no-poster.png";
-import { PlayIcon } from "../PlayBtn";
+import { PlayIcon } from "../Playbtn";
 import VideoPopup from "../../../components/videoPopup/VideoPopup";
 const DetailsBanner = ({ video, crew }) => {
   const [show, setShow] = useState(false);
