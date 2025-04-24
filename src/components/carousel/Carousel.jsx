@@ -1,9 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useRef } from "react";
-import {
-  BsFillArrowLeftCircleFill,
-  BsFillArrowRightCircleFill,
-} from "react-icons/bs";
+import { BsFillArrowLeftCircleFill, BsFillArrowRightCircleFill } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import dayjs from "dayjs";
@@ -44,6 +41,12 @@ const Carousel = ({ data, loading, endpoint, title }) => {
     );
   };
 
+  const handleCardClick = (item) => {
+    const type = item.media_type || endpoint; // Determine type from media_type or fallback to endpoint
+    const id = item.id;
+    navigate(`/${type}/${id}`);
+  };
+
   return (
     <div className="carousel">
       <ContentWrapper>
@@ -66,14 +69,12 @@ const Carousel = ({ data, loading, endpoint, title }) => {
                 <div
                   className="carouselItem"
                   key={item.id}
-                  onClick={() =>
-                    navigate(`${item.media_type || endpoint}/${item.id}`)
-                  }
+                  onClick={() => handleCardClick(item)} // Updated here
                 >
                   <div className="posterBlock">
                     <Img src={posterUrl} />
                     <CircleRating rating={item.vote_average} />
-                    <Genres data={item.genres_ids || []} /> {/* Updated here */}
+                    <Genres data={item.genres_ids || []} />
                   </div>
                   <div className="textBlock">
                     <span className="title">{item.title || item.name}</span>

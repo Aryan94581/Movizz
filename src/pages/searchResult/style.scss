@@ -1,0 +1,45 @@
+.searchResultsPage {
+    padding: 40px 0;
+  
+    .searchTitle {
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: white;
+  
+      span {
+        color: var(--pink);
+      }
+    }
+  
+    .resultsGrid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 20px;
+    }
+  
+    .card {
+      background: transparent;
+      border-radius: 10px;
+      overflow: hidden;
+      cursor: pointer;
+      text-align: center;
+      transition: transform 0.2s;
+  
+      img {
+        width: 100%;
+      }
+  
+      .title {
+        color: white;
+        font-size: 14px;
+        font-weight: 600;
+        padding: 10px;
+      }
+  
+      &:hover {
+        transform: scale(1.03);
+      }
+    }
+  }
+  
