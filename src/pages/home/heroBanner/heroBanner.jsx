@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-/* eslint-disable react-hooks/rules-of-hooks */
->>>>>>> 7f32e1e1fc8dc7f88468a8d9c79b25eceb4f00ad
 import { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 import "./heroBanner.scss";
