@@ -1,17 +1,13 @@
-import React from "react";
-
+import PropTypes from "prop-types";
 import Carousel from "../../components/carousel/Carousel";
 import useFetch from "../../components/hooks/useFetch";
 
-
-const Similar = ({ mediaType, id }) => {
-    const { data, loading, error } = useFetch(`/${mediaType}/${id}/similar`);
-
-    const title = mediaType === "tv" ? "Similar TV Shows" : "Similar Movies";
+const Recommendation = ({ mediaType, id }) => {
+    const { data, loading } = useFetch(`/${mediaType}/${id}/recommendations`);
 
     return (
         <Carousel
-            title={title}
+            title="Recommendations"
             data={data?.results}
             loading={loading}
             endpoint={mediaType}
@@ -19,4 +15,9 @@ const Similar = ({ mediaType, id }) => {
     );
 };
 
-export default Similar;
+Recommendation.propTypes = {
+    mediaType: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired, // id should be a string
+};
+
+export default Recommendation;
