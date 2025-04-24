@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 import "./heroBanner.scss";
 import { useSelector } from "react-redux"
@@ -6,7 +6,7 @@ import useFetch from '../../../components/hooks/useFetch';
 import Img from "../../../components/lazyLoadImage/img";
 import ContentWrapper from "../../../components/contentWrapper/contentWrapper";
 
-const heroBanner = () => {
+const HeroBanner = () => {
 
   const [background, setBackground] = useState("");
 
@@ -62,4 +62,4 @@ const heroBanner = () => {
   )
 }
 
-export default heroBanner
+export default HeroBanner

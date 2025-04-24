@@ -6,10 +6,9 @@ import {
 } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-// eslint-disable-next-line no-unused-vars
-import dayjs, { Dayjs } from "dayjs";
+import dayjs from "dayjs";
 
-import ContentWrapper from '../contentWrapper/contentWrapper';
+import ContentWrapper from "../contentWrapper/contentWrapper";
 import Img from "../lazyLoadImage/img";
 import PosterFallback from "../../assets/no-poster.png";
 import "./Carousel.scss";
@@ -25,7 +24,7 @@ const Carousel = ({ data, loading, endpoint, title }) => {
     const container = carouselContainer.current;
     const scrollAmount =
       dir === "left"
-        ? container.scrollLeft - (container.ofsetWidth + 20)
+        ? container.scrollLeft - (container.offsetWidth + 20)
         : container.scrollLeft + (container.offsetWidth + 20);
     container.scrollTo({
       left: scrollAmount,
@@ -63,8 +62,6 @@ const Carousel = ({ data, loading, endpoint, title }) => {
               const posterUrl = item.poster_path
                 ? url.poster + item.poster_path
                 : PosterFallback;
-              console.log("item:" + item);
-              console.log("item_name:" + item.title);
               return (
                 <div
                   className="carouselItem"
@@ -90,11 +87,11 @@ const Carousel = ({ data, loading, endpoint, title }) => {
           </div>
         ) : (
           <div className="loadingSkeleton">
-            {skItem}
-            {skItem}
-            {skItem}
-            {skItem}
-            {skItem}
+            {skItem()}
+            {skItem()}
+            {skItem()}
+            {skItem()}
+            {skItem()}
           </div>
         )}
       </ContentWrapper>
